@@ -1,5 +1,5 @@
 var generateBtn = document.querySelector("#generate");
-const specialcharacters = "!$#%@&*()"
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -23,7 +23,7 @@ function generatePassword() {
 
     var minimumCount = 0;
 
-    var minimumNumbers = "";
+  var minimumNumbers = "";
   var minimumLowerCases = "";
   var minimumUpperCases = "";
   var minimumSpecialCharacters = "";
@@ -42,7 +42,7 @@ function generatePassword() {
     },
 
     function getSpecialCharacters() {
-      return specialCharacters(Math.floor(Math.random() * specialCharacters.length));
+      return getSpecialCharacters(Math.floor(Math.random() * getSpecialCharacters.length));
     }
 
   ];
