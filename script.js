@@ -11,7 +11,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-    var passwordLength = prompt("Please enter the number of characters you want for you new password.  It must be more than 12 but less than 128.");
+    var passwordLength = prompt("Please enter the number of characters you want for you new password.  It must be more than 8 but less than 128.");
   
     var numbers = confirm("Do you want numbers in your password?");
   
@@ -30,19 +30,20 @@ function generatePassword() {
 
   var functionArray = [
     function getNumbers() {
-      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
-    },
+      return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+    }
 
     function getLowerCases() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+      return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
     },
 
     function getUpperCases() {
-      return +String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+      return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
     },
 
     function getSpecialCharacters() {
-      return getSpecialCharacters(Math.floor(Math.random() * getSpecialCharacters.length));
+        const SpecialCharacters = "!@%&/()=$#><";
+      return SpecialCharacters[Math.floor(Math.random() * SpecialCharacters.length)];
     }
 
   ];
